@@ -2,8 +2,9 @@ package com.olehpodolin.didemo.controllers;
 
 import com.olehpodolin.didemo.services.GreetingService;
 import com.olehpodolin.didemo.services.GreetingServiceImpl;
+import org.springframework.stereotype.Controller;
 
-
+@Controller
 public class ConstructorInjectedController {
 
     private GreetingService greetingService;

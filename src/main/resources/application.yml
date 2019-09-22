@@ -1,0 +1,12 @@
+olehpodolin:
+  jms:
+    user: JMS Username
+    password: somepass
+    url: SomeURL
+
+---
+spring:
+  profiles: de
+olehpodolin:
+  jms:
+    user: JMS Username de profile

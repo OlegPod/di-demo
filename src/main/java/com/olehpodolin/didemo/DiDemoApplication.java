@@ -1,6 +1,11 @@
 package com.olehpodolin.didemo;
 
+import com.olehpodolin.didemo.controllers.ConstructorInjectedController;
 import com.olehpodolin.didemo.controllers.MyController;
+import com.olehpodolin.didemo.controllers.PropertyInjectedController;
+import com.olehpodolin.didemo.controllers.SetterInjectedController;
+import com.olehpodolin.didemo.examplebeans.FakeDataSource;
+import com.olehpodolin.didemo.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +18,13 @@ public class DiDemoApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		controller.hello();
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+		System.out.println(fakeDataSource.getUser());
+
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+
+		System.out.println(fakeJmsBroker.getUser());
+
 	}
 }
